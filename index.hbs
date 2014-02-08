@@ -1,0 +1,61 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! The big featured header on the homepage, with the site logo and description }}
+<header id="site-head" {{#if @blog.cover}}style="background-image: url({{@blog.cover}});"{{/if}}>
+  <div class="vertical">
+    <div id="site-head-content" class="inner">
+      {{#if @blog.logo}}<a id="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
+      <h1 class="blog-title">{{@blog.title}}</h1>
+      <p class="blog-description">{{@blog.description}}</p>
+    </div>
+  </div>
+</header>
+
+<nav role="filtering" class="sticky_nav">
+  <span>
+    Filter articles:
+    <a id="filter_all" href="#" class="filter filter_active">All</a>,
+    <a id="filter_music" href="#" class="filter">Music</a>,
+    <a id="filter_writing" href="#" class="filter">Writing</a>,
+    <a id="filter_photography" href="#" class="filter">Photography</a>
+  </span>
+</nav>
+
+{{! The main content area on the homepage }}
+<main class="content" role="main">
+
+  {{! Each post will be output using this markup }}
+  {{#foreach posts}}
+
+  <article class="{{post_class}} col span_12">
+    <header class="post-header">
+      <h2 class="post-title">
+        <a href="{{url}}">{{{title}}}</a>
+      </h2>
+      <span class="newsDate">
+        <span>
+          <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD'}}
+          </time>
+          <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='MMM'}}
+          </time>
+          <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='YYYY'}}, on
+          </time>
+          {{tags}}
+        </span>
+      </span>
+    </header>
+    <section class="post-excerpt">
+      {{content words="0"}}
+      <p>{{excerpt}}<a href="{{url}}">&hellip;continue reading</a></p>
+    </section>
+  </article>
+
+  {{/foreach}}
+
+  {{!! After all the posts, we have the previous/next pagination links }}
+  {{pagination}}
+
+</main>
