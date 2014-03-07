@@ -14,16 +14,6 @@ the {body} of the default.hbs template, which contains our header/footer. }}
   </div>
 </header>
 
-<nav role="filtering" class="sticky_nav">
-  <span>
-    Filter articles:
-    <a id="filter_all" href="#" class="filter filter_active">All</a>,
-    <a id="filter_music" href="#" class="filter">Music</a>,
-    <a id="filter_writing" href="#" class="filter">Writing</a>,
-    <a id="filter_photography" href="#" class="filter">Photography</a>
-  </span>
-</nav>
-
 {{! The main content area on the homepage }}
 <main class="content" role="main">
 
@@ -49,7 +39,7 @@ the {body} of the default.hbs template, which contains our header/footer. }}
     </header>
     <section class="post-excerpt">
       {{content words="0"}}
-      <p>{{excerpt}}<a href="{{url}}">&hellip;continue reading</a></p>
+      <p>{{excerpt}}<a href="{{url}}"> &hellip;continue reading</a></p>
     </section>
   </article>
 
@@ -59,3 +49,18 @@ the {body} of the default.hbs template, which contains our header/footer. }}
   {{pagination}}
 
 </main>
+
+<div role="filtering" id="filter_wrapper">
+    <a href="#">
+      <img id="filter_music" class="filter" src="/assets/images/music.jpg"/>
+    </a>
+    <a href="#">
+      <img id="filter_writing" class="filter" src="/assets/images/writing.jpg"/>
+    </a>
+    <a href="#">
+      <img id="filter_photography" class="filter" src="/assets/images/imagery.jpg"/
+    ></a>
+    <a href="/about">
+      <img class="filter" src="/assets/images/about.jpg"/>
+    </a>
+</div>

@@ -44,39 +44,58 @@
 
       $( "#filter_all" ).click(function(e) {
         e.preventDefault();
-        $("nav a").removeClass("filter_active");
         $(".post").show();
-        $(this).addClass("filter_active");
       });
 
       $( "#filter_music" ).click(function(e) {
         e.preventDefault();
-        $("nav a").removeClass("filter_active");
-        $(".post.tag-music").show();
-        $(this).addClass("filter_active");
-        $('.post').not('.tag-music').each(function(){
-          $(this).hide();
-        });
+        if ($(this).hasClass('filter_active')) {
+          $(this).removeClass('filter_active');
+          $('.post').each (function () {
+            $(this).show();
+          });
+        } else {
+          $(this).addClass("filter_active");
+          $('.filter').not(this).removeClass('filter_active');
+          $(".post.tag-music").show();
+          $('.post').not('.tag-music').each(function(){
+            $(this).hide();
+          });
+        }
       });
 
       $( "#filter_writing" ).click(function(e) {
         e.preventDefault();
-        $("nav a").removeClass("filter_active");
-        $(this).addClass("filter_active");
-        $(".post.tag-writing").show();
-        $('.post').not('.tag-writing').each(function(){
-          $(this).hide();
-        });
+        if ($(this).hasClass('filter_active')) {
+          $(this).removeClass('filter_active');
+          $('.post').each (function () {
+            $(this).show();
+          });
+        } else {
+          $(this).addClass("filter_active");
+          $('.filter').not(this).removeClass('filter_active');
+          $(".post.tag-writing").show();
+          $('.post').not('.tag-writing').each(function(){
+            $(this).hide();
+          });
+        }
       });
 
       $( "#filter_photography" ).click(function(e) {
         e.preventDefault();
-        $("nav a").removeClass("filter_active");
-        $(".post.tag-photography").show();
-        $(this).addClass("filter_active");
-        $('.post').not('.tag-photography').each(function(){
-          $(this).hide();
-        });
+        if ($(this).hasClass('filter_active')) {
+          $(this).removeClass('filter_active');
+          $('.post').each (function () {
+            $(this).show();
+          });
+        } else {
+          $(this).addClass("filter_active");
+          $('.filter').not(this).removeClass('filter_active');
+          $(".post.tag-photography").show();
+          $('.post').not('.tag-photography').each(function(){
+            $(this).hide();
+          });
+        }
       });
     });
 
