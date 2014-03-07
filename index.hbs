@@ -14,23 +14,22 @@ the {body} of the default.hbs template, which contains our header/footer. }}
   </div>
 </header>
 
-<div role="filtering" id="filter_wrapper">
-    <a href="#">
-      <img id="filter_music" class="filter" src="/assets/images/music.jpg"/>
-    </a>
-    <a href="#">
-      <img id="filter_writing" class="filter" src="/assets/images/writing.jpg"/>
-    </a>
-    <a href="#">
-      <img id="filter_photography" class="filter" src="/assets/images/imagery.jpg"/
-    ></a>
-    <a href="/about">
-      <img class="filter" src="/assets/images/about.jpg"/>
-    </a>
-</div>
-
 {{! The main content area on the homepage }}
 <main class="content" role="main">
+  <div role="filtering" id="filter_wrapper" class="row">
+    <a href="#">
+      <img id="filter_music" class="filter col span_3" src="/assets/images/music.jpg"/>
+    </a>
+    <a href="#">
+      <img id="filter_writing" class="filter col span_3" src="/assets/images/writing.jpg"/>
+    </a>
+    <a href="#">
+      <img id="filter_photography" class="filter col span_3" src="/assets/images/imagery.jpg"/
+    ></a>
+    <a href="/about">
+      <img class="filter col span_3" src="/assets/images/about.jpg"/>
+    </a>
+  </div>
 
   {{! Each post will be output using this markup }}
   {{#foreach posts}}
