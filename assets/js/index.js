@@ -91,8 +91,8 @@
         } else {
           $(this).addClass("filter_active");
           $('.filter').not(this).removeClass('filter_active');
-          $(".post.tag-photography").show();
-          $('.post').not('.tag-photography').each(function(){
+          $(".post.tag-photography, .post.tag-imagery").show();
+          $('.post').not('.tag-photography, .tag-imagery').each(function(){
             $(this).hide();
           });
         }
