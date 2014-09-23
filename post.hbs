@@ -21,19 +21,26 @@
         {{! Everything inside the #post tags pulls data from the post }}
         {{#post}}
 
-        <h1 class="post-title">{{{title}}}</h1>
-
-        {{! Everything below outputs content of the the post which has been published }}
-        <span class="newsDate">
-        <span>
-          <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD'}}
-          </time>
-          <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='MMM'}}
-          </time>
-          <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='YYYY'}}{{#if tags}}, on {{tags}}{{/if}}
-          </time>
-        </span>
-      </span>
+        <header class="post-header">
+          <h2 class="post-title">
+            <a href="{{url}}">{{{title}}}</a>
+          </h2>
+          <p>
+            <i>
+              <span class="newsDate">
+                {{author}} wrote this on
+                <span>
+                  <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='MMM'}}
+                  </time>
+                  <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD'}}
+                  </time>
+                  <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='YYYY'}}{{#if tags}}, on {{tags}}{{/if}}
+                  </time>
+                </span>
+              </span>
+            </i>
+          </p>
+        </header>
 
         <section class="post-content">
             {{content}}

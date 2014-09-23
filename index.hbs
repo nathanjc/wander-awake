@@ -16,7 +16,7 @@ the {body} of the default.hbs template, which contains our header/footer. }}
 
 {{! The main content area on the homepage }}
 <main class="content" role="main">
-  <div role="filtering" id="filter_wrapper" class="row">
+  <div role="filtering" id="filter_wrapper" class="col span_12">
     <a href="#">
       <img id="filter_music" class="filter col span_3" src="/assets/images/music.jpg"/>
     </a>
@@ -31,34 +31,6 @@ the {body} of the default.hbs template, which contains our header/footer. }}
     </a>
   </div>
 
-  {{! Each post will be output using this markup }}
-  {{#foreach posts}}
-
-  <article class="{{post_class}} col span_12">
-    <header class="post-header">
-      <h2 class="post-title">
-        <a href="{{url}}">{{{title}}}</a>
-      </h2>
-      <span class="newsDate">
-        <span>
-          <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD'}}
-          </time>
-          <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='MMM'}}
-          </time>
-          <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='YYYY'}}{{#if tags}}, on {{tags}}{{/if}}
-          </time>
-        </span>
-      </span>
-    </header>
-    <section class="post-excerpt">
-      {{content words="0"}}
-      <p>{{excerpt}}<a href="{{url}}"> &hellip;continue reading</a></p>
-    </section>
-  </article>
-
-  {{/foreach}}
-
-  {{!! After all the posts, we have the previous/next pagination links }}
-  {{pagination}}
+  {{> "loop"}}
 
 </main>

@@ -22,14 +22,8 @@
 </head>
 <body class="{{body_class}}">
 	<nav class="sticky_nav">
-	  <ul>
-	    <li>
-	      <a href="/">home</a>
-	    </li>
-	    <li>
-	      <a href="/about">about</a>
-	    </li>
-	  </ul>
+	  <a href="/">home</a>
+		<a href="/about">about</a>
 	</nav>
 
 	{{! Everything else gets inserted here }}
@@ -38,17 +32,18 @@
 	<hr />
 
 	<footer class="site-footer">
-		<p>
-			Want to know more <a href="/about">about us</a>?
-		</p>
-		<p class="inner">
-			<section class="copyright">Content copyright &copy;2013 <a href="/">{{@blog.title}}</a>. Subscribe to our <a href="{{@blog.url}}/rss/">RSS</a>.
-			</section>
+		<section class="footer-copyright">
+			<p>
+				Want to know more <a href="/about">about us</a>?
 			</p>
-		</p>
-		<p class="poweredby">
-			Powered by <a href="http://ghost.org">Ghost</a>.
-		</p>
+			<p>
+				Content copyright &copy;2013 <a href="/">{{@blog.title}}</a>. Subscribe to our <a href="{{@blog.url}}/rss/">RSS</a>.
+			</p>
+			</p>
+			<p>
+				Powered by <a href="http://ghost.org">Ghost</a>.
+			</p>
+		</section>
 	</footer>
 
 	{{! Ghost outputs important scripts and data with this tag }}

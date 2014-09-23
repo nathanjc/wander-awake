@@ -1,34 +1,7 @@
-/* ==========================================================================
- Table of Contents
- ========================================================================== */
-
-/*
-
-  0.  Includes
-  1.  Icons
-  2.  General
-  3.  Utilities
-  4.  General
-  5.  Single Post
-  6.  Third Party Elements
-  7.  Pagination
-  8.  Footer
-  9.  Media Queries (Tablet)
-  10. Media Queries (Mobile)
-
-*/
-
-/* ==========================================================================
- 0. Includes - Ground zero
- ========================================================================== */
 
 @import url(normalize.css);
 @import url(responsive.gs.css);
 
-
-/* ==========================================================================
- 1. Icons - Sets up the icon font and respective classes
- ========================================================================== */
 
 /* Import the font file with the icons in it */
 @font-face {
@@ -73,23 +46,15 @@
   content: "\e004";
 }
 
-
-/* ==========================================================================
- 2. General - Setting up some base styles
- ========================================================================== */
-
 html {
   height: 100%;
   max-height: 100%;
-  font-size: 55%;
 }
 
 body {
   height: 100%;
   max-height: 100%;
-  font-family: "Alegreya", serif;
-  font-size: 18px;
-  line-height: 1.6em;
+  font: 22px "Alegreya", serif;
   color: #3A4145;
   background-color: #FAFAFA;
 }
@@ -105,22 +70,36 @@ footer {
   padding: 50px;
 }
 
+p {
+  font-size: 1em; /* 22px */
+  line-height: 1.1364em; /* 25px */
+  margin: 0 0 1.1364em 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  font-size: 2.7273em; /* 60px */
+  line-height: 1.2500em; /* 75px */
+  margin-top: 0.4167em;
+  margin-bottom: 0.0000em;
+}
+
+h2, h3{
+  font-size: 2.1818em; /* 48px */
+  line-height: 1.0417em; /* 50px */
+  margin-top: 0.5208em;
+  margin-bottom: 0.5208em;
+}
+
 a, .article_tags {
   color: #1B5766;
-  font-family: "Alegreya Sans";
 }
 
 a:hover {
   color: #4F777F;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Alegreya Sans";
-  text-rendering: optimizeLegibility;
-}
-
-h1, h2, h3, h2 a {
-  font-family: "Alegreya Sans SC";
 }
 
 #site-head {
@@ -131,7 +110,6 @@ h1, h2, h3, h2 a {
   margin-bottom: 5rem;
   text-align: center;
   color: #fff;
-  letter-spacing: 5px;
   padding-top: 30px;
   background: #303538 no-repeat center center;
   background-size: cover;
@@ -149,20 +127,10 @@ h1, h2, h3, h2 a {
 /* The details of your blog. Defined in ghost/settings/ */
 .blog-title {
   margin: 10px 0 10px 0;
-  font-size: 5rem;
-  letter-spacing: -1px;
-  font-weight: bold;
   text-shadow: 0 1px 6px rgba(0,0,0,0.1);
 }
 
 .blog-description {
-  margin: 0;
-  font-family: "Alegreya Sans";
-  letter-spacing: 8px;
-  font-size: 1.8rem;
-  line-height: 1.5em;
-  font-weight: normal;
-  letter-spacing: 0;
   text-shadow: 0 1px 3px rgba(0,0,0,0.15);
 }
 
@@ -172,13 +140,18 @@ h1, h2, h3, h2 a {
   text-align: center;
 }
 
+.newsDate {
+  font-size: 0.8182em; /* 18px */
+  line-height: 1.3889em; /* 25px */
+  margin-top: 1.3889em;
+  margin-bottom: 0.0000em;
+}
+
 ::-moz-selection {
   color: #222;
   background: #D6EDFF;
   text-shadow: none;
 }
-
-
 
 ::selection {
   color: #222;
@@ -188,8 +161,24 @@ h1, h2, h3, h2 a {
 
 .post {
   padding: 16px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #eee;
 }
+
+.post-header {
+  text-align: center;
+}
+
+.post-title, .post-title > a {
+  color: #3A4415;
+  text-decoration: none;
+  font-weight: normal;
+  font-family: "Alegreya";
+}
+  .post-title > a:hover {
+    text-decoration: underline;
+    color: #4F777F;
+    transition: all 0.2s ease;
+  }
 
 .post:nth-last-child(2), .post:last-child, .post:only-child {
   border-bottom: none;
@@ -200,26 +189,15 @@ h1, h2, h3, h2 a {
 }
 
 nav {
-  list-style: none;
   text-align: center;
-  font-family: "Alegreya Sans";
 }
+
 nav.sticky_nav {
   position: relative;
   width: 100%;
   background-color: #FAFAFA;
   padding: 0px 0;
   z-index: 9999999;
-}
-
-nav > ul > li {
-  display: inline;
-  padding-right: 16px;
-}
-
-nav > ul {
-  padding: 0;
-  margin: 5px;
 }
 
 nav a {
@@ -235,12 +213,17 @@ nav a {
   text-decoration: underline;
 }
 
-.newsDate {
-  color: #999;
-  font-size: 14px;
-  font-family: "Alegreya Sans";
+.author-profile {
+  text-align: center;
 }
 
+.author-image {
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
 
 img, iframe {
   display: block;
@@ -251,9 +234,6 @@ img, iframe {
 }
 
 #filter_wrapper {
-  margin: auto 16px;
-  text-align: center;
-  max-width: 820px;
 }
 
 #filter_wrapper > a {
@@ -264,7 +244,6 @@ img, iframe {
   display: inline;
   max-width: 200px;
   padding: 4px;
-  margin: auto;
   height: auto !important;
   cursor: pointer;
   transition: all 200ms;
@@ -275,9 +254,6 @@ img.filter_active {
 }
 
 @media ( max-width : 800px ) {
-  #filter_wrapper {
-    
-  }
 
   #filter_wrapper > a > img {
     max-width: 150px;
@@ -287,6 +263,14 @@ img.filter_active {
 }
 
 @media ( max-width : 632px ) {
+
+  .newsDate {
+    font-size: 0.6364em; /* 14px */
+    line-height: 1.7857em; /* 25px */
+    margin-top: 1.7857em;
+    margin-bottom: 0.0000em;
+  }
+
   #filter_wrapper > a > img {
     max-width: 75px;
     padding: 4px;
