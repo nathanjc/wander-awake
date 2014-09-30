@@ -76,6 +76,10 @@ p {
   margin: 0 0 1.1364em 0;
 }
 
+a {
+  font-family: "Alegreya Sans";
+}
+
 h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizeLegibility;
 }
@@ -204,6 +208,7 @@ nav a {
   text-decoration: none;
   text-transform: lowercase;
   font-family: 'Alegreya Sans SC';
+  padding-right: 24px;
 }
 
 .filter {
