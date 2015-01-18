@@ -39,64 +39,7 @@
 
     $(document).ready(function(){
       featured();
-
       $(".sticky_nav").sticky({topSpacing:0});
-
-      $( "#filter_all" ).click(function(e) {
-        e.preventDefault();
-        $(".post").show();
-      });
-
-      $( "#filter_music" ).click(function(e) {
-        e.preventDefault();
-        if ($(this).hasClass('filter_active')) {
-          $(this).removeClass('filter_active');
-          $('.post').each (function () {
-            $(this).show();
-          });
-        } else {
-          $(this).addClass("filter_active");
-          $('.filter').not(this).removeClass('filter_active');
-          $(".post.tag-music").show();
-          $('.post').not('.tag-music').each(function(){
-            $(this).hide();
-          });
-        }
-      });
-
-      $( "#filter_writing" ).click(function(e) {
-        e.preventDefault();
-        if ($(this).hasClass('filter_active')) {
-          $(this).removeClass('filter_active');
-          $('.post').each (function () {
-            $(this).show();
-          });
-        } else {
-          $(this).addClass("filter_active");
-          $('.filter').not(this).removeClass('filter_active');
-          $(".post.tag-writing").show();
-          $('.post').not('.tag-writing').each(function(){
-            $(this).hide();
-          });
-        }
-      });
-
-      $( "#filter_photography" ).click(function(e) {
-        e.preventDefault();
-        if ($(this).hasClass('filter_active')) {
-          $(this).removeClass('filter_active');
-          $('.post').each (function () {
-            $(this).show();
-          });
-        } else {
-          $(this).addClass("filter_active");
-          $('.filter').not(this).removeClass('filter_active');
-          $(".post.tag-photography, .post.tag-imagery").show();
-          $('.post').not('.tag-photography, .tag-imagery').each(function(){
-            $(this).hide();
-          });
-        }
-      });
     });
 
 }(jQuery));
